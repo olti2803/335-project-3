@@ -10,7 +10,7 @@ main.cpp
 #include <vector>
 #include <string>
 #include "StdSort.hpp"
-//#include "QuickSelect1.hpp"
+#include "QuickSelect1.hpp"
 //#include "QuickSelect2.hpp"
 //#include "CountingSort.hpp"
 
@@ -59,7 +59,7 @@ int main(int argc, char* argv[]) {
 
     // Method 2: QuickSelect first method
     dataCopy = data;
-    //quickSelect1(header, dataCopy);
+    quickSelect1(header, dataCopy);
 
     // Method 3: QuickSelect second method (modified)
     dataCopy = data;

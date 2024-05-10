@@ -30,5 +30,3 @@ void stdSort(const std::string& header, std::vector<int> data) {
     std::cout << "P75: " << data[P75] << std::endl;
     std::cout << "Max: " << data.back() << std::endl;
 }
-
-
