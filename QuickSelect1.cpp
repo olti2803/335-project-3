@@ -43,7 +43,7 @@ int quickSelect(std::vector<int>& data, int left, int right, int k) {
     }
 }
 
-void quickSelect1(const std::string& header, std::vector<int>& data) {
+void quickSelect1(const std::string& header, std::vector<int> data) {
     std::cout << header << std::endl;
     const size_t n = data.size();
     int P50 = quickSelect(data, 0, n - 1, n / 2);
