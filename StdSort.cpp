@@ -11,6 +11,9 @@ StdSort.cpp
 #include <iostream>
 
 void stdSort(const std::string& header, std::vector<int> data) {
+    // Print the header
+    std::cout << header << std::endl;
+
     // Sort the data
     std::sort(data.begin(), data.end());
 
@@ -27,4 +30,5 @@ void stdSort(const std::string& header, std::vector<int> data) {
     std::cout << "P75: " << data[P75] << std::endl;
     std::cout << "Max: " << data.back() << std::endl;
 }
+
 
