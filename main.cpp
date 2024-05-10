@@ -11,7 +11,7 @@ main.cpp
 #include <string>
 #include "StdSort.hpp"
 #include "QuickSelect1.hpp"
-//#include "QuickSelect2.hpp"
+#include "QuickSelect2.hpp"
 //#include "CountingSort.hpp"
 
 // Function prototypes for reading data and handling the sorting
@@ -63,7 +63,7 @@ int main(int argc, char* argv[]) {
 
     // Method 3: QuickSelect second method (modified)
     dataCopy = data;
-    //quickSelect2(header, dataCopy);
+    quickSelect2(header, dataCopy);
 
     // Method 4: Counting sort
     dataCopy = data;
