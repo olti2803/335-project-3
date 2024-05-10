@@ -12,7 +12,7 @@ main.cpp
 #include "StdSort.hpp"
 #include "QuickSelect1.hpp"
 #include "QuickSelect2.hpp"
-//#include "CountingSort.hpp"
+#include "CountingSort.hpp"
 
 // Function prototypes for reading data and handling the sorting
 std::vector<int> readData(std::ifstream& file);
@@ -67,7 +67,7 @@ int main(int argc, char* argv[]) {
 
     // Method 4: Counting sort
     dataCopy = data;
-   // countingSort(header, dataCopy);
+    countingSort(header, dataCopy);
 
     return 0;
 }
