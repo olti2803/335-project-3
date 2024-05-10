@@ -11,7 +11,8 @@ QuickSelect1.hpp
 
 #include <vector>
 #include <string>
+#include <iostream>
 
-void quickSelect1(const std::string& header, std::vector<int> data);
+void quickSelect1(const std::string& header, std::vector<int>& data);
 
 #endif // QUICKSELECT1_HPP

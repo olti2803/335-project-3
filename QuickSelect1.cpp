@@ -64,7 +64,7 @@ int quickSelect(std::vector<int>& data, int left, int right, int k) {
 }
 
 // Main function to execute the quickselect sorting and find the five-number summary
-void quickSelect1(const std::string& header, std::vector<int> data) {
+void quickSelect1(const std::string& header, std::vector<int>& data) {
     std::cout << header << std::endl; // Print the header
 
     if (data.size() <= 20) {
