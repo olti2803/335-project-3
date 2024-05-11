@@ -14,7 +14,7 @@ QuickSelect2.cpp
 // Partition function rearranges the elements in the vector around a pivot
 // chosen from the vector. It places all elements smaller than the pivot to the left
 // of the pivot and all larger elements to the right.
-int partition(std::vector<int>& data, int left, int right, int pivotIndex) {
+static int partition(std::vector<int>& data, int left, int right, int pivotIndex) {
     int pivot = data[pivotIndex]; // Pivot element is selected from the pivot index
     std::swap(data[pivotIndex], data[right]); // Move pivot to the end for easier partitioning
     int storeIndex = left; // This will be the index of the smaller element
