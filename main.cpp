@@ -9,6 +9,7 @@ main.cpp
 #include <fstream>
 #include <vector>
 #include <string>
+#include <chrono>
 #include "StdSort.hpp"
 #include "QuickSelect1.hpp"
 #include "QuickSelect2.hpp"
@@ -18,20 +19,17 @@ main.cpp
 std::vector<int> readData(std::ifstream& file);
 
 int main(int argc, char* argv[]) {
-    // Ensure the program is run with a file name argument
     if (argc < 2) {
         std::cerr << "Usage: " << argv[0] << " <filename>\n";
         return 1;
     }
 
-    // Open the file
     std::ifstream inputFile(argv[1]);
     if (!inputFile.is_open()) {
         std::cerr << "Error opening file: " << argv[1] << "\n";
         return 1;
     }
 
-    // Read the header line
     std::string header;
     if (!std::getline(inputFile, header)) {
         std::cerr << "Error reading header from file\n";
@@ -44,35 +42,51 @@ int main(int argc, char* argv[]) {
     std::vector<int> data = readData(inputFile);
     inputFile.close();
 
-    // Verify data has been read
     if (data.empty()) {
         std::cerr << "No data found in the file.\n";
         return 1;
     }
 
-    // Call each sorting function and display results
+    // Time each sorting function
     std::vector<int> dataCopy;
+    std::chrono::high_resolution_clock::time_point start, end;
+    std::chrono::duration<double> elapsed_time;
 
     // Method 1: Standard sort
-    dataCopy = data; // Make a copy of the data for sorting
+    dataCopy = data;
+    start = std::chrono::high_resolution_clock::now();
     stdSort(header, dataCopy);
+    end = std::chrono::high_resolution_clock::now();
+    elapsed_time = end - start;
+    std::cout << "StdSort time: " << elapsed_time.count() << " seconds.\n";
 
     // Method 2: QuickSelect first method
     dataCopy = data;
+    start = std::chrono::high_resolution_clock::now();
     quickSelect1(header, dataCopy);
+    end = std::chrono::high_resolution_clock::now();
+    elapsed_time = end - start;
+    std::cout << "QuickSelect1 time: " << elapsed_time.count() << " seconds.\n";
 
     // Method 3: QuickSelect second method (modified)
     dataCopy = data;
+    start = std::chrono::high_resolution_clock::now();
     quickSelect2(header, dataCopy);
+    end = std::chrono::high_resolution_clock::now();
+    elapsed_time = end - start;
+    std::cout << "QuickSelect2 time: " << elapsed_time.count() << " seconds.\n";
 
     // Method 4: Counting sort
     dataCopy = data;
+    start = std::chrono::high_resolution_clock::now();
     countingSort(header, dataCopy);
+    end = std::chrono::high_resolution_clock::now();
+    elapsed_time = end - start;
+    std::cout << "CountingSort time: " << elapsed_time.count() << " seconds.\n";
 
     return 0;
 }
 
-// Function to read integer data from file into a vector
 std::vector<int> readData(std::ifstream& file) {
     std::vector<int> data;
     int value;
